@@ -52,7 +52,7 @@
 					<div 
 					v-for="t in tickers" 
 					:key="t.name"
-					@click="sel = t"
+					@click="select(t)"
 					:class="{
 						'border-4': sel === t
 					}"
@@ -140,6 +140,12 @@ export default {
 			}, 3000);
 			this.ticker = "";
 		},
+
+		select(ticker) {
+			this.sel = ticker;
+			this.graph = [];
+		},
+
 		handleDelete(tickerToRemowe) {
 			this.tickers = this.tickers.filter((t) => t != tickerToRemowe);
 		},
