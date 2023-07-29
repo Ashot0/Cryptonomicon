@@ -15,20 +15,24 @@
 						</div>
 						<div class="flex bg-white shadow-md p-1 rounded-md shadow-md flex-wrap">
 							<span
+							@click="ticker= 'BTC', add()"
 								class="inline-flex items-center px-2 m-1 rounded-md text-xs font-medium bg-gray-300 text-gray-800 cursor-pointer">
 								BTC
 							</span>
 							<span
+							@click="ticker= 'ETH', add()"
+								class="inline-flex items-center px-2 m-1 rounded-md text-xs font-medium bg-gray-300 text-gray-800 cursor-pointer">
+								ETH
+							</span>
+							<span
+							@click="ticker= 'DOGE', add()"
 								class="inline-flex items-center px-2 m-1 rounded-md text-xs font-medium bg-gray-300 text-gray-800 cursor-pointer">
 								DOGE
 							</span>
 							<span
+							@click="ticker= 'BCH', add()"
 								class="inline-flex items-center px-2 m-1 rounded-md text-xs font-medium bg-gray-300 text-gray-800 cursor-pointer">
 								BCH
-							</span>
-							<span
-								class="inline-flex items-center px-2 m-1 rounded-md text-xs font-medium bg-gray-300 text-gray-800 cursor-pointer">
-								CHD
 							</span>
 						</div>
 						<div class="text-sm text-red-600">Такой тикер уже добавлен</div>
@@ -112,7 +116,7 @@ export default {
 	name: "App",
 	data() {
 		return {
-			ticker: "default",
+			ticker: "",
 			tickers: [],
 			sel: null,
 			graph: [],
